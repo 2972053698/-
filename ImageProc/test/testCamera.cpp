@@ -3,34 +3,6 @@
 #include<opencv2/highgui/highgui.hpp> 
 #include <opencv2/opencv.hpp>
 #include"image.h"
-#include <dlfcn.h>
-//#include <dlfcn.h>
-typedef struct IM_POINT
-{
-    long  x;
-    long  y;
-}IM_POINT;
-
-typedef struct IM_RECT
-{
-    long    left;
-    long    top;
-    long    right;
-    long    bottom;
-}IM_RECT;
-
-typedef int (*FUN_AUTO)(IplImage*, float &,IM_POINT*,IM_RECT &, int);
-typedef int (*FUN_ROTATE_CROP)(IplImage*, IplImage*, float, IM_RECT);
-typedef int (*DEL)(IplImage*, IplImage*);
-typedef int (*RC)(const unsigned char * pSrcImageData, 
-		int iSrcWidth, 
-		int iSrcHeight, 
-		int nChannels,        
-		IM_POINT * Pos,
-		unsigned char * pDstImageData, 
-		int* iDstWidth, 
-		int* iDstHeight, 
-		int flag);
 using namespace cv; 
 using namespace std;
 int main() 
